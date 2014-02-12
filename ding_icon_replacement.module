@@ -1,0 +1,26 @@
+<?php
+/**
+ * @file
+ * Interface module for talking with the materials backend.
+ */
+
+/**
+ * This hook is run at the beginning of the page request
+ */
+function ding_icon_replacement_init() {
+  // Array of ding icon replacement paths
+  $paths = array(
+    'ting/object',
+  );
+
+  $path = current_path();
+  $module_path = drupal_get_path('module', 'ding_icon_replacement');
+
+  foreach ($paths as $value) {
+    if (strpos($path, $value) === 0) {
+      drupal_add_css($module_path . '/css/styles.css');
+      drupal_add_js($module_path .'/js/scripts.js', array('scope' => 'footer'));
+      break;
+    }
+  }
+}

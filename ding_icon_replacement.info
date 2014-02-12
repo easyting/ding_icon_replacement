@@ -1,0 +1,7 @@
+name = Ding icon replacement
+description = Replacement for arrow icons to "show more text"
+package = Ding!
+version = "7.x-1.18"
+core = 7.x
+
+dependencies[] = ting_search
